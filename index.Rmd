@@ -1,7 +1,7 @@
 ---
 title: "Sports Statistics"
 author: "Jacob Brown"
-description: "Final Project Initial Ideas"
+description: "Final Project Milestone 2"
 output:
   distill::distill_article:
     self_contained: false
@@ -12,3 +12,34 @@ output:
 ## Project thoughts
 
 I love sports and sports statistics. Because sports statistics lend themselves to being very comprehensive, I feel like I can find a way to use sports-related statistics for my final project. The sports I am most interested in are basketball, football, and baseball. I just did a deep dive on my own time with ESPN staff writer Bill Connelly's SP+ predictive model for NCAA college football where I scraped and calculated the post-game win expectancy (PGWE) for my favorite team, the Illinois Fighting Illini, and the rest of the Top 25 teams. I would love to work with stats like this somehow, especially if it can relate to my favorite teams like the Illini, the Golden State Warriors, or my favorite players like Stephen Curry and Jayson Tatum.
+
+## Milestone 2
+```{r}
+library(tidyverse)
+# Data about player rankings
+historical_RAPTOR_by_player <- 
+  read_csv("historical_RAPTOR_by_player.csv")
+historical_RAPTOR_by_team <- 
+  read_csv("historical_RAPTOR_by_team.csv")
+latest_RAPTOR_by_player <- 
+  read_csv("latest_RAPTOR_by_player.csv")
+latest_RAPTOR_by_team <- 
+  read_csv("latest_RAPTOR_by_team.csv")
+modern_RAPTOR_by_player <- 
+  read_csv("modern_RAPTOR_by_player.csv")
+modern_RAPTOR_by_team <- 
+  read_csv("modern_RAPTOR_by_team.csv")
+# NBA team predictions
+nba_elo <- 
+  read_csv("nba_elo.csv")
+nba_elo_latest <- 
+  read_csv("nba_elo_latest.csv")
+```
+
+# (Very) Preliminary Proposal
+
+In this case, my research question is related to the ever-contested topic of who the best player in the NBA is, both currently and all-time. This is a debate that has raged for decades, and genuinely is a subjective one, because every person has a different opinion on which statistics should be considered and consequently how much weight those statistics should carry in the Greatest of All Time (GOAT) calculation. What is much less subjective—at least on a season-by-season basis—is who the best teams are. Generally, the teams that win the NBA championship are the best teams for that given season. My research question is: "How closely related are both the quantity of and quality of the best players in the NBA to whether a not a team is also the best in the NBA?"
+
+Perhaps this research question is not specific enough. I hypothesize that what matters more to predicting a team's success in a season (and eventually winning a championship) is having players higher on the list of best players, rather than having more players than that that fall lower on the list of best players. The data included above is taken from FiveThirtyEight, and it includes data called `RAPTOR` that helps contextualize and stratify players in a ranking based on a number of statistic factors, as well as data called `elo` that represents statistical models that predict outcomes of NBA games and series. As I write this I recognize how audacious and arduous this task may be, and I also need guidance finding data that allows me to find systematic patterns.
+
+If I cannot find good, clean data related to sports to do this, I'm sure I can find many a dataset related to politics and be successful.
